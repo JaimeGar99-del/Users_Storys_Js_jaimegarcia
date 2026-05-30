@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gestión de datos con Objetos, Sets y Maps en JavaScript - Semana 2 - Jaime García">
+    <title>Semana 2 - Gestión de Datos | Jaime García</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span>&lt;/&gt;</span> Riwi JS - Jaime García
+            </div>
+            <nav class="nav-links">
+                <a href="../semana_1/index.html" class="nav-link">Semana 1</a>
+                <a href="#" class="nav-link active">Semana 2</a>
+                <a href="../semana_3/manipulacion_dom.html" class="nav-link">Semana 3</a>
+                <a href="../semana_4/index.html" class="nav-link">Semana 4</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+        <span class="hero-label">gestion_datos.js</span>
+        <h1>Objetos, Sets y Maps</h1>
+        <p>Estructuras de datos avanzadas en JavaScript para organizar, almacenar y manipular información de manera eficiente.</p>
+    </div>
+
+    <main>
+
+        <!-- TASK 1 & 5: Productos (Objetos) -->
+        <div class="products-row" id="products-container">
+            <!-- Rellenado dinámicamente desde gestion_datos.js -->
+        </div>
+
+        <!-- TASK 2 & 3: Set + Map lado a lado -->
+        <div class="data-row">
+
+            <!-- Set de números únicos -->
+            <section class="card" id="set-card">
+                <div class="card-title">
+                    Números Únicos
+                    <span class="badge badge-set">Set</span>
+                </div>
+                <div class="set-grid" id="set-container">
+                    <!-- Rellenado dinámicamente -->
+                </div>
+                <div class="set-info" id="set-info"></div>
+            </section>
+
+            <!-- Map categoría → producto -->
+            <section class="card">
+                <div class="card-title">
+                    Categoría → Producto
+                    <span class="badge badge-map">Map</span>
+                </div>
+                <table class="map-table">
+                    <thead>
+                        <tr>
+                            <th>Categoría (Clave)</th>
+                            <th>Producto (Valor)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="map-container">
+                        <!-- Rellenado dinámicamente -->
+                    </tbody>
+                </table>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer>
+        Desarrollado en Módulo JavaScript - Jaime García - Riwi 2026.
+    </footer>
+
+    <!-- Script principal con toda la lógica -->
+    <script src="gestion_datos.js"></script>
+
+    <!-- Script de renderizado UI -->
+    <script>
+        // Renderizar productos
+        const productsContainer = document.getElementById("products-container");
+        const listadoProductos  = [producto1, producto2, producto3];
+
+        listadoProductos.forEach(prod => {
+            const card = document.createElement("div");
+            card.className = "card product-item";
+            card.innerHTML = `
+                <div class="card-title">
+                    ${prod.nombre}
+                    <span class="badge badge-object">Objeto</span>
+                </div>
+                <div class="product-id"># ${prod.id}</div>
+                <div class="product-price">$${prod.precio.toFixed(2)}</div>
+            `;
+            productsContainer.appendChild(card);
+        });
+
+        // Renderizar Set
+        const setContainer = document.getElementById("set-container");
+        const setInfo      = document.getElementById("set-info");
+
+        misNumeros.forEach(num => {
+            const chip = document.createElement("span");
+            chip.className = "set-chip";
+            chip.textContent = num;
+            setContainer.appendChild(chip);
+        });
+
+        setInfo.textContent =
+            `size: ${misNumeros.size}  ·  has(30): ${misNumeros.has(30)}  ·  10 eliminado`;
+
+        //  Renderizar Map
+        if (typeof categoriasMap !== 'undefined') {
+            const mapContainer = document.getElementById("map-container");
+            categoriasMap.forEach((valor, clave) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td class="map-key">${clave}</td>
+                    <td>${valor}</td>
+                `;
+                mapContainer.appendChild(row);
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 4 - Jaime García</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span>&lt;/&gt;</span> Riwi JS - Jaime García
+            </div>
+            <nav class="nav-links">
+                <a href="../semana_1/index.html" class="nav-link">Semana 1</a>
+                <a href="../semana_2/index.html" class="nav-link">Semana 2</a>
+                <a href="../semana_3/manipulacion_dom.html" class="nav-link">Semana 3</a>
+                <a href="#" class="nav-link active">Semana 4</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="app-card">
+            <h1>Gestión de Tareas</h1>
+            <p class="subtitle">Agrega tareas, haz clic sobre ellas para completarlas y sincroniza con el servidor.</p>
+            
+            <button class="btn btn-sync" id="btnSincronizar">Recargar desde Servidor (GET)</button>
+            
+            <div class="status-message" id="estadoAPI"></div>
+
+            <div class="input-box">
+                <input type="text" id="inputTarea" placeholder="Nueva tarea..." autocomplete="off">
+                <button class="btn btn-add" id="btnAgregar">Agregar</button>
+            </div>
+
+            <ul id="listaTareas"></ul>
+        </div>
+    </main>
+
+    <footer>
+        Desarrollado en Módulo JavaScript - Jaime García - Riwi 2026.
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+:root {
+    --bg-color: #070312;
+    --card-bg: rgba(23, 10, 43, 0.55);
+    --border-color: rgba(168, 85, 247, 0.2);
+    --text-primary: #f3f4f6;
+    --text-secondary: #bba7d6;
+    --accent-neon: #d8b4fe;
+    --accent-purple: #8b5cf6;
+    --accent-cyan: #67e8f9;
+    --error-red: #ef4444;
+    --success-green: #10b981;
+    --glow-color: rgba(168, 85, 247, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(216, 180, 254, 0.1) 0px, transparent 50%);
+}
+
+/* ── HEADER ───────────────────────────────────────────── */
+header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(15, 6, 28, 0.85);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: -0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo span {
+    color: var(--accent-neon);
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-neon);
+}
+
+/* ── HERO ─────────────────────────────────────────────── */
+.hero {
+    text-align: center;
+    padding: 3.5rem 2rem 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero-label {
+    display: inline-block;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: var(--accent-purple);
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 50px;
+    padding: 0.3rem 1rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.05em;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #f3f4f6 30%, var(--accent-neon));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.75rem;
+}
+
+.hero p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ── MAIN LAYOUT ──────────────────────────────────────── */
+main {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 2rem 3rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ── TOP ROW: 3 columnas para productos ───────────────── */
+.products-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+/* ── BOTTOM ROW: Set + Map lado a lado ───────────────── */
+.data-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+@media (max-width: 900px) {
+    .products-row {
+        grid-template-columns: 1fr;
+    }
+    .data-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── CARD BASE ────────────────────────────────────────── */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.75rem;
+    backdrop-filter: blur(8px);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    border-color: rgba(168, 85, 247, 0.45);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.08);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.card-title .badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.badge-object  { background: rgba(139, 92, 246, 0.15); color: #c084fc; border: 1px solid rgba(139, 92, 246, 0.3); }
+.badge-map     { background: rgba(216, 180, 254, 0.15); color: var(--accent-neon); border: 1px solid rgba(216, 180, 254, 0.3); }
+.badge-set     { background: rgba(103, 232, 249, 0.12); color: var(--accent-cyan); border: 1px solid rgba(103, 232, 249, 0.3); }
+
+/* ── PRODUCTO CARD ────────────────────────────────────── */
+.product-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.product-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.product-id {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.product-price {
+    font-weight: 700;
+    color: var(--accent-neon);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* ── SET CHIPS ────────────────────────────────────────── */
+.set-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.set-chip {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: rgba(103, 232, 249, 0.08);
+    border: 1px solid rgba(103, 232, 249, 0.25);
+    color: var(--accent-cyan);
+    padding: 0.35rem 0.85rem;
+    border-radius: 8px;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.set-chip:hover {
+    background: rgba(103, 232, 249, 0.15);
+    transform: translateY(-2px);
+}
+
+.set-info {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-top: 1rem;
+    font-family: 'Fira Code', monospace;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 0.75rem;
+}
+
+/* ── MAP TABLE ────────────────────────────────────────── */
+.map-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.map-table th, .map-table td {
+    text-align: left;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.map-table tr:last-child td {
+    border-bottom: none;
+}
+
+.map-table th {
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.map-table td {
+    font-size: 0.95rem;
+}
+
+.map-key {
+    color: var(--accent-neon);
+    font-weight: 600;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+}
+
+/* ── FOOTER ───────────────────────────────────────────── */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}

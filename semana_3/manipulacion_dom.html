@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 3 - Jaime García</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span>&lt;/&gt;</span> Riwi JS - Jaime García
+            </div>
+            <nav class="nav-links">
+                <a href="../semana_1/index.html" class="nav-link">Semana 1</a>
+                <a href="../semana_2/index.html" class="nav-link">Semana 2</a>
+                <a href="#" class="nav-link active">Semana 3</a>
+                <a href="../semana_4/index.html" class="nav-link">Semana 4</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Lista de Notas</h1>
+            <p class="instructions">Escribe tu nota abajo y presiona agregar. Se guardará de manera automática en el almacenamiento local de tu navegador.</p>
+            
+            <div class="input-group">
+                <input type="text" id="inputNota" placeholder="Escribe una nota aquí..." autocomplete="off">
+                <button class="btn-add" id="btnAgregar">Agregar</button>
+            </div>
+
+            <ul id="listaNotas"></ul>
+        </div>
+    </main>
+
+    <footer>
+        Desarrollado en Módulo JavaScript - Jaime García - Riwi 2026.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
