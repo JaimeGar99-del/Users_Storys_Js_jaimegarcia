@@ -12,3 +12,7 @@ Repositorio del **Módulo de JavaScript (Nivel Principiante)** desarrollado en R
 | [Semana 4](./semana_4/) | Consumo de APIs externas con Fetch, async/await y CRUD completo |
 
 > Abre el `.html` de cada semana directamente en el navegador. Usa `F12` para ver la consola del desarrollador.
+
+## Repositorio de Historias de Usuario
+
+🔗 [JaimeGar99-del/Users_Storys_Js_jaimegarcia](https://github.com/JaimeGar99-del/Users_Storys_Js_jaimegarcia)
